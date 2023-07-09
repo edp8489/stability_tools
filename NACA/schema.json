@@ -1,0 +1,157 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://github.com/edp8489/misc-projects/buckling_tool/schema.json",
+    "type": "object",
+    "default": {},
+    "description": "Root Schema",
+    "required": [
+        "loading",
+        "eqForm",
+        "s1",
+        "s2",
+        "s3",
+        "s4",
+        "reference",
+        "xData",
+        "yData"
+    ],
+    "properties": {
+        "loading": {
+            "type": "string",
+            "default": "",
+            "description": "The loading Schema",
+            "examples": [
+                "shear",
+                "compression",
+                "bending"
+            ]
+        },
+        "eqForm": {
+            "type": "string",
+            "default": "",
+            "description": "Which form of the buckling equation these coefficients correspond to. (e.g. lowercase \"k\" is used with the pi^2 form; capital \"K\" includes the pi^2 effect)",
+            "examples": [
+                "no Pi",
+                "Pi"
+            ]
+        },
+        "s1": {
+            "type": "string",
+            "default": "",
+            "description": "First edge support (left side, short edge)",
+            "examples": [
+                "s",
+                "c",
+                "f",
+                "e"
+            ]
+        },
+        "s2": {
+            "type": "string",
+            "default": "",
+            "description": "Second edge support (right side, short edge)",
+            "examples": [
+                "s",
+                "c",
+                "f",
+                "e"
+            ]
+        },
+        "s3": {
+            "type": "string",
+            "default": "",
+            "description": "Third edge support (bottom, long edge)",
+            "examples": [
+                "s",
+                "c",
+                "f",
+                "e"
+            ]
+        },
+        "s4": {
+            "type": "string",
+            "default": "",
+            "description": "Fourth edge support (top, long edge)",
+            "examples": [
+                "s",
+                "c",
+                "f",
+                "e"
+            ]
+        },
+        "edgeStiffness": {
+            "type": "integer",
+            "default": 0,
+            "description": "Edge restraint stiffness value (if other than s, c, f). Use minimum value of all edges",
+            "examples": [
+                0
+            ]
+        },
+        "reference": {
+            "type": "string",
+            "default": "",
+            "description": "Publication, figure #, etc",
+            "examples": [
+                ""
+            ]
+        },
+        "imgURI": {
+            "type": "string",
+            "default": "",
+            "description": "path/name to image of chart",
+            "examples": [
+                ""
+            ]
+        },
+        "notes": {
+            "type": "array",
+            "default": [],
+            "description": "The notes Schema",
+            "items": {
+                "type": "string",
+                "default": "",
+                "description": "A Schema",
+                "examples": [
+                    ""
+                ]
+            },
+            "examples": [
+                [
+                    ""]
+            ]
+        },
+        "xData": {
+            "type": "array",
+            "default": [],
+            "description": "Chart independent variable (typically a/b ratio)",
+            "items": {},
+            "examples": [
+                []
+            ]
+        },
+        "yData": {
+            "type": "array",
+            "default": [],
+            "description": "Chart dependent variable (buckling coefficient)",
+            "items": {},
+            "examples": [
+                []
+            ]
+        }
+    },
+    "examples": [{
+        "loading": "shear",
+        "eqForm": "no Pi",
+        "s1": "s",
+        "s2": "s",
+        "s3": "s",
+        "s4": "s",
+        "reference": "",
+        "imgURI": "",
+        "notes": [
+            ""
+        ],
+        "xData": [],
+        "yData": []
+    }]
+}
